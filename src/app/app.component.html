@@ -1,0 +1,250 @@
+<div class="main">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Faça seu cadastro</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="matContent">
+      <form 
+      action="#"
+      (ngSubmit)="submit()"
+      [formGroup]="cadastroForm"
+      >
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite o seu nome"
+            formControlName="nome"
+            minlength="3"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['nome'].getError('required')">
+                Este Campo é Obrigatorio!
+              </span>
+              <span *ngIf="cadastroForm.controls['nome'].getError('minlength')">
+                Está curto!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Sobrenome</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite o seu sobrenome"
+            formControlName="sobrenome"
+            minlength="3"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['sobrenome'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+              <span *ngIf="cadastroForm.controls['sobrenome'].getError('minlength')">
+                Está curto!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite seu CPF"
+            formControlName="cpf"
+            maxlength="11"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['cpf'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label >Contato</mat-label>
+            <input 
+            type="tel" 
+            matInput 
+            placeholder="Digite o seu Telefone"
+            formControlName="tel"
+            maxlength="11"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['tel'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Informe seu Sexo</mat-label>
+            <mat-select formControlName="sex">
+              <mat-option value="M" >Masculino</mat-option>
+              <mat-option value="F">Feminino</mat-option>
+              <mat-option value="O">Outro</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Estado</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite o seu Estado"
+            formControlName="estado"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['estado'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+              <span *ngIf="cadastroForm.controls['estado'].getError('minlength')">
+                Está curto!
+              </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline" class="address">
+            <mat-label>Endereço</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite o seu endereço"
+            formControlName="endereco"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['endereco'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+              <span *ngIf="cadastroForm.controls['endereco'].getError('minlength')">
+                Está curto!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Complemento</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="Digite seu complemento"
+            formControlName="complemento"
+            minlength="3"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['complemento'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+              <span *ngIf="cadastroForm.controls['complemento'].getError('minlength')">
+                Está curto!
+              </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline" class="grow">
+            <mat-label>E-mail</mat-label>
+            <input 
+              type="email" 
+              matInput 
+              placeholder="email@email.com"
+              formControlName="email"
+              minlength="7"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['email'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+              <span *ngIf="cadastroForm.controls['email'].getError('minlength')">
+                Está curto!
+              </span>
+              <span *ngIf="cadastroForm.controls['email'].getError('email')">
+                Isso não é um email.
+              </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input 
+            type="username" 
+            matInput 
+            placeholder="Digite seu nome de usuario"
+            formControlName="usuario"
+            minlength="5"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['usuario'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+              <span *ngIf="cadastroForm.controls['usuario'].getError('minlength')">
+                Está curto!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input 
+            type="password" 
+            matInput 
+            placeholder="Digite a sua senha"
+            formControlName="senha"
+            minlength="4"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['senha'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+              <span *ngIf="cadastroForm.controls['senha'].getError('minlength')">
+              Está curto!
+              </span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Confirme sua senha</mat-label>
+            <input 
+            type="password" 
+            matInput 
+            placeholder="Confirme sua senha"
+            formControlName="confirmeSenha"
+            (change)="validadorDeSenha()"
+            minlength="4"
+            >
+            <mat-error>
+              <span *ngIf="cadastroForm.controls['confirmeSenha'].getError('required')">
+                Este Campo é Obrigatório!
+              </span>
+              <span *ngIf="cadastroForm.controls['confirmeSenha'].getError('minlength')">
+                Está curto!
+              </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row col">
+          <button 
+            mat-raised-button 
+            color="warn"
+            type="submit"  
+            class="grow"
+            [disabled]="cadastroForm.invalid"
+          >Cadastrar</button>
+        </div>
+            <!--"
+                [disabled]="!cadastroForm.valid"
+            -->
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
